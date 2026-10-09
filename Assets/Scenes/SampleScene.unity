@@ -518,13 +518,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: PimpkinCaneGun
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 388f4eab6ff917a4aa1bc6c50c778450, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 388f4eab6ff917a4aa1bc6c50c778450, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 388f4eab6ff917a4aa1bc6c50c778450, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 388f4eab6ff917a4aa1bc6c50c778450, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: 388f4eab6ff917a4aa1bc6c50c778450, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 388f4eab6ff917a4aa1bc6c50c778450, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.43
+      value: 3.64
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 388f4eab6ff917a4aa1bc6c50c778450, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.41
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 388f4eab6ff917a4aa1bc6c50c778450, type: 3}
       propertyPath: m_LocalPosition.z
