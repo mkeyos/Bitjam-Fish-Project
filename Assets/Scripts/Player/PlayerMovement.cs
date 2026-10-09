@@ -55,9 +55,13 @@ public class PlayerMovement : MonoBehaviour
         float cursorDistFromPlayer = fromPlayerToCursor.magnitude;
         float camDestinationFromPlayer = fromPlayerToCursor.magnitude/2;
 
+        // Calculate the position where the camera supposed to move
         Vector2 camDestination = pPos + (camDestinationFromPlayer < playerValues.camMaxDistFromPlayer ? fromPlayerToDestination : fromPlayerToDestination.normalized*playerValues.camMaxDistFromPlayer);
 
+        // Smooth out the camera movement
         Vector2 camPosition = Vector2.Lerp(Camera.main.transform.position, camDestination, playerValues.cameraSpeed/10);
+
+        // Apply the camera movement
         Camera.main.transform.position = new Vector3(camPosition.x, camPosition.y, -10);
     }
 }
