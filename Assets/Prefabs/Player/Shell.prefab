@@ -62,6 +62,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shell
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: c54cadaa0c2ee0e4e8e9c084db4a94f6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: c54cadaa0c2ee0e4e8e9c084db4a94f6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

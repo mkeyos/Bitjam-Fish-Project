@@ -27,7 +27,6 @@ public class Enemy2Attack : MonoBehaviour
 
     IEnumerator Attack(Vector2 startLookDir)
     {
-        Debug.Log("Start shooting");
         // Wait for attack delay
         yield return new WaitForSeconds(values.attackStartDelay);
 
@@ -70,7 +69,7 @@ public class Enemy2Attack : MonoBehaviour
             // Set max range for the bullet
             bullet.GetComponent<Bullet>().maxRange = values.attackRange;
         }
-        Debug.Log("End shooting");
+        
         // Reset attack state and put attacks on cooldown
         attacking = false;
         attackCooldownTimer = values.attackCooldown;
