@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 1
-  values: {fileID: 0}
+  values: {fileID: 11400000, guid: 9a96d50044f36eb48a3dc41bcf93a906, type: 2}
 --- !u!114 &547223373401880848
 MonoBehaviour:
   m_ObjectHideFlags: 0
