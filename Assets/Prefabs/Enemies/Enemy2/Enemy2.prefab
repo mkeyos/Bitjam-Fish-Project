@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy2Attack
   values: {fileID: 11400000, guid: dcc52711a5211ad4985b8eba27efca1d, type: 2}
+  bulletPrefab: {fileID: 1378583423260356734, guid: ab832dcb83c540240aa3b2ecac7612ee, type: 3}
 --- !u!114 &6304638185023724546
 MonoBehaviour:
   m_ObjectHideFlags: 0

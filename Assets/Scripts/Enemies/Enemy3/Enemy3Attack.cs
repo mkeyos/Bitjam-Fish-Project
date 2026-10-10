@@ -16,8 +16,9 @@ public class Enemy3Attack : MonoBehaviour
 
     void Update()
     {
-        // Check for player proxomity
-        if (Vector2.Distance(player.transform.position, transform.position) <= values.targetingRange && !attacking) {
+        // Check for player proxomity or whether this enemy has died
+        if ((Vector2.Distance(player.transform.position, transform.position) <= values.targetingRange
+        || GetComponent<Health>().dead) && !attacking) {
             attacking = true;
             StartCoroutine(Attack());
         }
@@ -55,5 +56,6 @@ public class Enemy3Attack : MonoBehaviour
         Debug.Log("BOOM");
         // End attack
         gameObject.GetComponent<Health>().Damage(values.maxHealth);
+        enabled = false;
     }
 }

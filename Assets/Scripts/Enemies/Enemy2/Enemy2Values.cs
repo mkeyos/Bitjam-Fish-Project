@@ -20,7 +20,10 @@ public class Enemy2Values : ScriptableObject
     public float stoppingRange = 3;
     public float attackRange = 4;
     public float attackSpread = 90;
+    public float bulletsPerAttack = 3;
     public float attackDamage = 1;
+    public float firerate = 1;
+    public float bulletSpeed = 20;
     public float attackStartDelay = 1;
     public float attackCooldown = 2;
 

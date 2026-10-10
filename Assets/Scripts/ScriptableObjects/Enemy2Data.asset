@@ -21,12 +21,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   sightConeMaxAngle: 130
-  sightRange: 15
+  sightRange: 18
   reactionTime: 0.8
-  stoppingRange: 8
-  attackRange: 12
-  attackSpread: 45
+  stoppingRange: 13
+  attackRange: 20
+  attackSpread: 30
+  bulletsPerAttack: 6
   attackDamage: 1
-  attackStartDelay: 1
+  firerate: 2
+  bulletSpeed: 9
+  attackStartDelay: 0.5
   attackCooldown: 3
   maxHealth: 1

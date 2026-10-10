@@ -15,7 +15,8 @@ MonoBehaviour:
   raycastLayers:
     serializedVersion: 2
     m_Bits: 0
-  attackRange: 4
+  targetingRange: 4
+  attackRange: 6
   attackDamage: 1
-  attackStartDelay: 1
+  attackStartDelay: 2
   maxHealth: 1
