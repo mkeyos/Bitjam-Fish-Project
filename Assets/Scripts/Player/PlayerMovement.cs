@@ -4,8 +4,6 @@ using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
-    
     [SerializeField] private PlayerValues playerValues;
 
     Rigidbody2D rb;
