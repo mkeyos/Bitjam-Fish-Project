@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4197599de3cdd3c4d8b4dca2195df5de, type: 3}
+  m_Name: Enemy2Data
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy2Values
+  pathSpeed: 2
+  chaseSpeed: 3
+  acceleration: 45
+  deceleration: 45
+  turnSpeed: 15
+  raycastLayers:
+    serializedVersion: 2
+    m_Bits: 55
+  sightConeMaxAngle: 130
+  sightRange: 18
+  reactionTime: 0.8
+  stoppingRange: 13
+  attackRange: 20
+  attackSpread: 30
+  bulletsPerAttack: 6
+  attackDamage: 1
+  firerate: 2
+  bulletSpeed: 9
+  attackStartDelay: 0.5
+  attackCooldown: 3
+  maxHealth: 1

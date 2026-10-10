@@ -21,7 +21,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   sightConeMaxAngle: 130
-  sightRange: 10
+  sightRange: 15
   reactionTime: 0.8
   stoppingRange: 3
   attackRange: 3
