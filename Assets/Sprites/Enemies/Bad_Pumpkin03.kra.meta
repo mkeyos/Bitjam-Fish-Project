@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 7b4cca6a61d3e964eb51619786e9055d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: a6ae63f99032a51448256fc6d0c53c68, type: 3}
+  LayersInfo:
+  - LayerId: '{9cbc01a8-52aa-4db3-bdc4-43e8495fe99a}'
+  - LayerId: MargedTexture
+  LayersSave:
+  - Id: 165d49fd-1b79-4fbd-8759-69e8360caf7a
+    Name: Layer 1
+    DrawType: 1
+    ExportType: 1
+    subLayerSaves:
+    - LayerId: '{9cbc01a8-52aa-4db3-bdc4-43e8495fe99a}'
+      SourceType: 0
+      UseAsTransparentMask: 0
