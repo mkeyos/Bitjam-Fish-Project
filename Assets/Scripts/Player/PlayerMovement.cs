@@ -1,4 +1,5 @@
 using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Scripting.APIUpdating;
 
@@ -10,17 +11,20 @@ public class PlayerMovement : MonoBehaviour
 
     Rigidbody2D rb;
     PlayerInput input;
+    Animator anim;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerInput>();
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         Move();
         MoveCamera();
+        UpdateAnimation();
     }
 
     void Move()
@@ -40,6 +44,12 @@ public class PlayerMovement : MonoBehaviour
 
         // Applying the movement to the rigidbody
         rb.linearVelocity = playerValues.currentMovement * playerValues.currentSpeed;
+    }
+
+    void UpdateAnimation()
+    {
+        bool moving = input.move != Vector2.zero;
+        anim.Play(moving ? "Walk" : "Idle");
     }
 
     void MoveCamera()
