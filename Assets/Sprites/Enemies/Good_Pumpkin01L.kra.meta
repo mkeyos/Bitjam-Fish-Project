@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: fde10e283d8534540b55573e272a41f5
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: a6ae63f99032a51448256fc6d0c53c68, type: 3}
+  LayersInfo:
+  - LayerId: '{194d8927-eb74-4368-82f2-b37639568355}'
+  - LayerId: MargedTexture
+  LayersSave:
+  - Id: 4082bab4-ac66-4798-998b-68809a7622c9
+    Name: Enemy01.5
+    DrawType: 1
+    ExportType: 1
+    subLayerSaves:
+    - LayerId: '{194d8927-eb74-4368-82f2-b37639568355}'
+      SourceType: 0
+      UseAsTransparentMask: 0
