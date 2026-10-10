@@ -53,11 +53,15 @@ public class Enemy2Attack : MonoBehaviour
 
             // Create the bullet
             Vector2 position = transform.position;
-            GameObject bullet = Instantiate(bulletPrefab, position + bulletDirection * 1.2f, Quaternion.Euler(bulletDirection));
+            GameObject bullet = Instantiate(
+                bulletPrefab,
+                position + bulletDirection * 1.2f,
+                Quaternion.Euler(0, 0, Vector2.Angle(Vector2.right, bulletDirection))
+            );
 
             // Flip bullet sprite when shooting it towards left
             SpriteRenderer bulletSprite = bullet.GetComponentInChildren<SpriteRenderer>();
-            //bulletSprite.flipY = Vector2.Angle(bulletDirection, Vector2.right) > 90;
+            bulletSprite.flipY = Vector2.Angle(bulletDirection, Vector2.right) > 90;
 
             // Add force to the bullet to make it fly
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
