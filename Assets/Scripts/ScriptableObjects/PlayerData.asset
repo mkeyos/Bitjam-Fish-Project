@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerValues
   maxSpeed: 8
   currentSpeed: 0
-  currentMovement: {x: 0.010706426, y: -0.00004113322}
+  currentMovement: {x: -1e-45, y: -1e-45}
   acceleration: 30
   deceleration: 30
   turnSpeed: 15
   cameraSpeed: 10
   camMaxDistFromPlayer: 5
+  maxHealth: 1

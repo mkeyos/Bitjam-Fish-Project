@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 38420883774508266}
   - component: {fileID: 4894357237818937672}
   - component: {fileID: 4015236804513929176}
+  - component: {fileID: 569506697940933081}
+  - component: {fileID: 5022534914911159424}
   m_Layer: 6
   m_Name: Enemy1
   m_TagString: Untagged
@@ -172,4 +174,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1Movement
   values: {fileID: 11400000, guid: 3108cffd43d72a346b704040055c127a, type: 2}
   path: {fileID: 0}
-  lookDirection: {x: 0, y: -1}
+  inAttackRange: 0
+--- !u!114 &569506697940933081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420724872619141205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d325ec27a98e1488bfffbc934f1d42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy1Attack
+  values: {fileID: 11400000, guid: 3108cffd43d72a346b704040055c127a, type: 2}
+--- !u!114 &5022534914911159424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420724872619141205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b8c32220a4f2649806a21cebd6c38b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy1Health
+  maxHealth: 1
+  values: {fileID: 11400000, guid: 3108cffd43d72a346b704040055c127a, type: 2}
