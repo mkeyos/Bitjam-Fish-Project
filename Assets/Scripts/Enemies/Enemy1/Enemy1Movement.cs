@@ -11,7 +11,7 @@ public class Enemy1Movement : MonoBehaviour
     [SerializeField] GameObject path;
     int currentPathNode = 0;
 
-    [SerializeField] Vector2 lookDirection = Vector2.down;
+    public Vector2 lookDirection { get; private set; } = Vector2.down;
 
     enum moveStates
     {
@@ -30,7 +30,7 @@ public class Enemy1Movement : MonoBehaviour
     float timeInLOS = 0;
     float pathReturnTimer = 1;
     Vector2 vectorTowardsPlayer;
-    bool inAttackRange = false;
+    [HideInInspector] public bool inAttackRange = false;
 
     void Start()
     {
@@ -65,7 +65,7 @@ public class Enemy1Movement : MonoBehaviour
         }
 
         // Determine whether the enemy is in attack distance to the player
-        inAttackRange = (player.transform.position - transform.position).magnitude <= values.attackRange ? true : false;
+        inAttackRange = (player.transform.position - transform.position).magnitude <= values.stoppingRange ? true : false;
 
         // Count down the time to return back on path after seeing the player briefly
         pathReturnTimer -= Time.deltaTime;

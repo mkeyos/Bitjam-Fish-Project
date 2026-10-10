@@ -20,5 +20,5 @@ public class PlayerValues : ScriptableObject
     #endregion
 
     [Header("Health")]
-    public float maxHealth = 10;
+    public float maxHealth = 1;
 }

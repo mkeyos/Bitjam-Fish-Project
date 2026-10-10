@@ -17,8 +17,12 @@ public class Enemy1Values : ScriptableObject
     public float reactionTime = 0.5f;
 
     [Header("Attack")]
-    public float attackRange = 3;
+    public float stoppingRange = 3;
+    public float attackRange = 4;
+    public float attackAngle = 90;
     public float attackDamage = 1;
+    public float attackStartDelay = 1;
+    public float attackCooldown = 2;
 
     [Header("Health")]
     public float maxHealth = 1;

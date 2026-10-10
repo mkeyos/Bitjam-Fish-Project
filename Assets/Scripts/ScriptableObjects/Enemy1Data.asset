@@ -12,14 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d5584134bfc5aa418186685e6f09b6f, type: 3}
   m_Name: Enemy1Data
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1Values
-  maxSpeed: 3
-  acceleration: 60
-  deceleration: 60
+  pathSpeed: 3
+  chaseSpeed: 4
+  acceleration: 45
+  deceleration: 45
   turnSpeed: 15
   raycastLayers:
     serializedVersion: 2
     m_Bits: 55
-  sightConeMaxAngle: 90
+  sightConeMaxAngle: 130
   sightRange: 10
-  reactionTime: 0.5
+  reactionTime: 0.8
+  stoppingRange: 3
   attackRange: 3
+  attackAngle: 90
+  attackDamage: 1
+  attackStartDelay: 1
+  attackCooldown: 2
+  maxHealth: 1
