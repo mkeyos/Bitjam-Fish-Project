@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Shoot : MonoBehaviour
 {
@@ -17,14 +18,9 @@ public class Shoot : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Update()
+    public void OnAttack()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            ShootGun();
-        }
-
-        
+        ShootGun();
     }
 
     void ShootGun()
