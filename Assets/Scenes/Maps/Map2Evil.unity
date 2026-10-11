@@ -5922,8 +5922,7 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3306237665433533329, guid: 78b4172df494b5540b12bddbb13c3cbc, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78b4172df494b5540b12bddbb13c3cbc, type: 3}
@@ -38501,6 +38500,10 @@ PrefabInstance:
     - target: {fileID: 2638814872209708992, guid: ab6450a42a08bae4a891bf050c2c9910, type: 3}
       propertyPath: m_Name
       value: Spice
+      objectReference: {fileID: 0}
+    - target: {fileID: 2885373604362996684, guid: ab6450a42a08bae4a891bf050c2c9910, type: 3}
+      propertyPath: spiceTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5423845844339934803, guid: ab6450a42a08bae4a891bf050c2c9910, type: 3}
       propertyPath: m_LocalPosition.x
