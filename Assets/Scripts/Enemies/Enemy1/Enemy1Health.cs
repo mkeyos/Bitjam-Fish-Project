@@ -17,5 +17,8 @@ public class Enemy1Health : Health
         GetComponent<Enemy1Attack>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+        Debug.Log("Enemy 1 dead");
+        // Destroy enemy
+        Destroy(gameObject);
     }
 }

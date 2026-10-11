@@ -7,14 +7,15 @@ public class SceneController : MonoBehaviour
     public static SceneController instance;
     public static event System.Action OnStageCleared;
     public bool isStageCleared {get; private set;}
+    private Coroutine checkEnemiesCoroutine;
 
     void OnEnable()
     {
-        isStageCleared = false;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     void Start()
     {
-        StartCoroutine(CheckEnemies());
+        StartEnemyCheck();
     }
     private void Awake()
     {
@@ -28,6 +29,21 @@ public class SceneController : MonoBehaviour
             Destroy(gameObject);
         }
         
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        StartEnemyCheck();
+    }
+
+    private void StartEnemyCheck()
+    {
+        if (checkEnemiesCoroutine != null)
+        {
+            StopCoroutine(checkEnemiesCoroutine);
+        }
+        isStageCleared = false;
+        checkEnemiesCoroutine = StartCoroutine(CheckEnemies());
     }
     public void NextLevel()
     {
@@ -64,6 +80,11 @@ public class SceneController : MonoBehaviour
 
     void OnDisable()
     {
-        OnStageCleared = null;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+        if (checkEnemiesCoroutine != null)
+        {
+            StopCoroutine(checkEnemiesCoroutine);
+        }
     }
 }
