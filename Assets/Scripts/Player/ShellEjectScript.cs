@@ -57,7 +57,6 @@ public class ShellEjectScript : MonoBehaviour
         if (!landed)
         {
             shell.localRotation *= Quaternion.Euler(0f, 0f, currRotationSpeed * Time.deltaTime);
-            Debug.Log("Shell Z rotation: " + shell.localRotation.eulerAngles.z);
         }
     }
 }
