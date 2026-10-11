@@ -17,5 +17,8 @@ public class Enemy2Health : Health
         GetComponent<Enemy2Attack>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
         GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+        Debug.Log("Enemy 2 dead");
+        // Destroy enemy, We need these for Barrier script to work properly
+        Destroy(gameObject);
     }
 }

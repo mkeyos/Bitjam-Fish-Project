@@ -56,11 +56,6 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadSceneAsync(sceneName);
     }
 
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     IEnumerator CheckEnemies()
     {
         yield return null;
