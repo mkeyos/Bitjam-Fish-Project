@@ -31,17 +31,25 @@ public class Enemy1Movement : MonoBehaviour
     float pathReturnTimer = 1;
     Vector2 vectorTowardsPlayer;
     [HideInInspector] public bool inAttackRange = false;
+    SpriteRenderer spriteRenderer;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindWithTag("Player");
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
     
     void Update()
     {
         PlayerStateCheck();
         Movement();
+        FlipSprite();
+    }
+
+    void FlipSprite()
+    {
+        spriteRenderer.flipX = player.transform.position.x < transform.position.x;
     }
 
     void PlayerStateCheck()
