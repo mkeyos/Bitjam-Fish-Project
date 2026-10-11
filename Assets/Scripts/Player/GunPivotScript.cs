@@ -12,14 +12,16 @@ public class GunPivotScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.z = transform.position.z;
-        Vector2 dir = mousePosition - transform.position;
+        if (Time.timeScale != 0) {
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mousePosition.z = transform.position.z;
+            Vector2 dir = mousePosition - transform.position;
 
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
-        float zAngle = transform.eulerAngles.z;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+            float zAngle = transform.eulerAngles.z;
 
-        spriteRenderer.flipY = zAngle > 90f && zAngle < 270f;
+            spriteRenderer.flipY = zAngle > 90f && zAngle < 270f;
+        }
     }
 }
