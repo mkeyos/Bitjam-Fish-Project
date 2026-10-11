@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5022534914911159424}
   m_Layer: 6
   m_Name: Enemy1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,5 +200,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b8c32220a4f2649806a21cebd6c38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy1Health
-  maxHealth: 1
   values: {fileID: 11400000, guid: 3108cffd43d72a346b704040055c127a, type: 2}

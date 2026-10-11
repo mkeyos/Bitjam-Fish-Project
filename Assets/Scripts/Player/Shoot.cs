@@ -25,7 +25,7 @@ public class Shoot : MonoBehaviour
 
     public void OnAttack()
     {
-        ShootGun();
+        if (Time.timeScale != 0) ShootGun();
     }
 
     void ShootGun()
