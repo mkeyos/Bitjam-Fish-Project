@@ -1,15 +1,21 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Shoot : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public GameObject muzzleFlashPrefab;
     public SpriteRenderer gunSpriteRenderer;
     private Animator anim;
     private Vector3 originalFirePointPos;
 
     public float bulletSpeed = 20f;
+
+    // Shell Ejection
+    public Transform shellEjectPoint;
+    public GameObject shellPrefab;
 
     void Start()
     {
@@ -17,14 +23,9 @@ public class Shoot : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void Update()
+    public void OnAttack()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            ShootGun();
-        }
-
-        
+        ShootGun();
     }
 
     void ShootGun()
@@ -43,12 +44,33 @@ public class Shoot : MonoBehaviour
             firePoint.localPosition = originalFirePointPos;
         }
 
+        GameObject flash = Instantiate(
+            muzzleFlashPrefab, 
+            firePoint.position, 
+            firePoint.rotation
+        );
+
+        SpriteRenderer flashSprite = flash.GetComponentInChildren<SpriteRenderer>();
+        flashSprite.flipY = gunSpriteRenderer.flipY;
+        Destroy(flash, 1f);
 
         GameObject bullet = Instantiate(
             bulletPrefab, 
             firePoint.position, 
             firePoint.rotation
         );
+
+        GameObject shell = Instantiate(
+            shellPrefab, 
+            shellEjectPoint.position, 
+            Quaternion.identity
+        );
+
+        ShellEjectScript shellEjectScript = shell.GetComponent<ShellEjectScript>();
+        SpriteRenderer shellSprite = shell.GetComponentInChildren<SpriteRenderer>();
+        shellSprite.flipX = gunSpriteRenderer.flipY;
+        shellEjectScript.Eject(firePoint.right);
+        Destroy(shell, 5f);
 
         SpriteRenderer bulletSprite = bullet.GetComponentInChildren<SpriteRenderer>();
         bulletSprite.flipY = gunSpriteRenderer.flipY;

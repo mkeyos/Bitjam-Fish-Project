@@ -12,12 +12,12 @@ public class MainMenu : MonoBehaviour
        SceneManager.LoadScene(currentLevel);
     }
 
-    public void DisableSettings()
+    public void DisablePanel()
     {
         gameObject.SetActive(false);
     }
 
-    public void ActivateSettings()
+    public void ActivatePanel()
     {
         gameObject.SetActive(true);
     }
@@ -29,6 +29,6 @@ public class MainMenu : MonoBehaviour
 #else
         Application.Quit();
 #endif
-    }
+        }
 
 }
