@@ -7,7 +7,8 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        pauseMenu = transform.GetChild(0).gameObject;
+        pauseMenu = transform.GetChild(1).gameObject;
+        pauseMenu.SetActive(false);
     } 
 
     public void OnPause()

@@ -7,6 +7,7 @@ public class SceneController : MonoBehaviour
     public static SceneController instance;
     public static event System.Action OnStageCleared;
     public bool isStageCleared {get; private set;}
+    public int levelStep = 1;
     private Coroutine checkEnemiesCoroutine;
 
     void OnEnable()
@@ -28,6 +29,11 @@ public class SceneController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Update()
+    {
+        Debug.Log(instance.levelStep);
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         StartEnemyCheck();
@@ -42,8 +48,9 @@ public class SceneController : MonoBehaviour
         isStageCleared = false;
         checkEnemiesCoroutine = StartCoroutine(CheckEnemies());
     }
-    public void NextLevel()
+    public void NextLevel(bool spice = false)
     {
+        instance.levelStep = spice ? 2 : 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -51,6 +58,15 @@ public class SceneController : MonoBehaviour
     public void LoadLevel(string sceneName)
     {
         SceneManager.LoadSceneAsync(sceneName);
+    }
+    public void LoadLevel(int scene)
+    {
+        SceneManager.LoadSceneAsync(scene);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     IEnumerator CheckEnemies()
@@ -63,6 +79,7 @@ public class SceneController : MonoBehaviour
             if (enemies.Length == 0)
             {
                 isStageCleared = true;
+                if (levelStep == 2) levelStep = 3;
                 OnStageCleared?.Invoke();
                 yield break;
             }
