@@ -20,7 +20,7 @@ MonoBehaviour:
   raycastLayers:
     serializedVersion: 2
     m_Bits: 55
-  sightConeMaxAngle: 130
+  sightConeMaxAngle: 360
   sightRange: 15
   reactionTime: 0.8
   stoppingRange: 3

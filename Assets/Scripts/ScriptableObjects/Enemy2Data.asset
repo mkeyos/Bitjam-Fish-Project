@@ -20,10 +20,10 @@ MonoBehaviour:
   raycastLayers:
     serializedVersion: 2
     m_Bits: 55
-  sightConeMaxAngle: 130
+  sightConeMaxAngle: 360
   sightRange: 18
   reactionTime: 0.8
-  stoppingRange: 13
+  stoppingRange: 10
   attackRange: 20
   attackSpread: 30
   bulletsPerAttack: 6

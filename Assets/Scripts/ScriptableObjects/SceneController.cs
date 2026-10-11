@@ -1,0 +1,97 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneController : MonoBehaviour
+{
+    public static SceneController instance;
+    public static event System.Action OnStageCleared;
+    public bool isStageCleared {get; private set;}
+    public int levelStep = 1;
+    private Coroutine checkEnemiesCoroutine;
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    void Start()
+    {
+        StartEnemyCheck();
+    }
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        StartEnemyCheck();
+    }
+
+    private void StartEnemyCheck()
+    {
+        if (checkEnemiesCoroutine != null)
+        {
+            StopCoroutine(checkEnemiesCoroutine);
+        }
+        isStageCleared = false;
+        checkEnemiesCoroutine = StartCoroutine(CheckEnemies());
+    }
+    public void NextLevel(bool spice = false)
+    {
+        instance.levelStep = spice ? 2 : 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+
+    public void LoadLevel(string sceneName)
+    {
+        SceneManager.LoadSceneAsync(sceneName);
+    }
+    public void LoadLevel(int scene)
+    {
+        SceneManager.LoadSceneAsync(scene);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    IEnumerator CheckEnemies()
+    {
+        yield return null;
+
+        while (!isStageCleared)
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            if (enemies.Length == 0)
+            {
+                isStageCleared = true;
+                if (levelStep == 2) levelStep = 3;
+                OnStageCleared?.Invoke();
+                yield break;
+            }
+            yield return new WaitForSeconds(1f);
+        }
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+
+        if (checkEnemiesCoroutine != null)
+        {
+            StopCoroutine(checkEnemiesCoroutine);
+        }
+    }
+}
