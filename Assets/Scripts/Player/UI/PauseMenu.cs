@@ -26,9 +26,4 @@ public class PauseMenu : MonoBehaviour
             Time.timeScale = 1;
         }
     }
-
-    public void MainMenu()
-    {
-        SceneController.instance.LoadLevel(0);
-    }
 }

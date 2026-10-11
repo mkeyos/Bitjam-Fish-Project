@@ -90,9 +90,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: fe7d9b79508b1cd47b7e00b087075b28, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3989589825971890281}
-    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: fe7d9b79508b1cd47b7e00b087075b28, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3933448453504075574}
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: fe7d9b79508b1cd47b7e00b087075b28, type: 3}
       insertIndex: -1
@@ -108,20 +105,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -2253911629886400664, guid: fe7d9b79508b1cd47b7e00b087075b28, type: 3}
   m_PrefabInstance: {fileID: 4061513033422370939}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3989589825971890281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6405556581127008019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25598310f53ae864ea9289f46ac7584e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  speed: 5
-  height: 0.1
 --- !u!61 &3933448453504075574
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -180,3 +163,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc718af9d7a36c409f61c3d8daa7766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  spiceTrigger: 1

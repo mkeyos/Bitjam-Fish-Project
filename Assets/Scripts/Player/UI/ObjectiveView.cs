@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectiveView : MonoBehaviour
 {
@@ -22,8 +23,8 @@ public class ObjectiveView : MonoBehaviour
     {
         if (SceneController.instance.levelStep > fieldsInView)
         {
-            if (fieldsInView > 0 && textboxes[fieldsInView - 1].GetComponent<TextMeshPro>())
-                textboxes[fieldsInView - 1].GetComponent<TextMeshPro>().color = Color.black;
+            if (fieldsInView > 0 && textboxes[fieldsInView - 1].GetComponent<TextMeshProUGUI>())
+                textboxes[fieldsInView - 1].GetComponent<TextMeshProUGUI>().color = new Color(0, 0, 0, 0.5f);
             StartCoroutine(EnableText(textboxes[fieldsInView]));
             fieldsInView++;
         }

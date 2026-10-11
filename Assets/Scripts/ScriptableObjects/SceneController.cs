@@ -29,6 +29,11 @@ public class SceneController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    void Update()
+    {
+        Debug.Log(instance.levelStep);
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         StartEnemyCheck();
