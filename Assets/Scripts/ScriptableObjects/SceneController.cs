@@ -19,16 +19,13 @@ public class SceneController : MonoBehaviour
     }
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
+            return;
         }
-        
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -54,11 +51,6 @@ public class SceneController : MonoBehaviour
     public void LoadLevel(string sceneName)
     {
         SceneManager.LoadSceneAsync(sceneName);
-    }
-
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     IEnumerator CheckEnemies()
