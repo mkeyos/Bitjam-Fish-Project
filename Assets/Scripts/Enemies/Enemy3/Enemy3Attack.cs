@@ -27,7 +27,6 @@ public class Enemy3Attack : MonoBehaviour
 
     IEnumerator Attack()
     {
-        Debug.Log("Exploding");
         // Wait for attack delay
         yield return new WaitForSeconds(values.attackStartDelay);
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, values.attackRange, Vector3.forward);
@@ -53,7 +52,7 @@ public class Enemy3Attack : MonoBehaviour
                 }
             }
         }
-        Debug.Log("BOOM");
+        
         // End attack
         gameObject.GetComponent<Health>().Damage(values.maxHealth);
         enabled = false;
